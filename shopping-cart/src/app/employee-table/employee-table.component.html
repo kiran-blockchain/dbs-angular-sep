@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees;let i=index">
+          <td>{{i+1}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.age}}</td>
+          <td>{{emp.salary}}</td>
+          <td><button class="btn btn-primary" 
+            (click)="handleClick(emp)">View Details</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
+  <select>
+      <option value="IN">India</option>
+      <option value="USA">United State</option>
+      <option value="UK">United Kingdom</option>
+  </select>
+{{selectedEmployee|json}}

@@ -1,0 +1,45 @@
+<form>
+    <div class="col-md-4 offset-md-3">
+        <div class="form-group">
+            <label for="email" class="form-label mt-4">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                placeholder="Enter email" [(ngModel)]="userProfile.email">
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label mt-4">Password</label>
+            <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp"
+                placeholder="Enter Password" [(ngModel)]="userProfile.password">
+        </div>
+        <fieldset class="form-group">
+            <label class="mt-4 form-label">Gender</label>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="gender" id="genderMale" value="M"
+                        [(ngModel)]="userProfile.gender" [checked]="userProfile.gender=='M'">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="gender" id="genderFemale" value="F"
+                        [(ngModel)]="userProfile.gender" [checked]="userProfile.gender=='F'">
+                    Female
+                </label>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label for="country" class="form-label mt-4">Country</label>
+            <select id="country" name="country" class="form-select" [(ngModel)]="userProfile.country">
+                <option value="">Select Country</option>
+                <option *ngFor="let c of countryList" [value]="c.code">{{c.name}}
+
+                </option>
+            </select>
+
+        </div>
+        <div class="form-group mt-3">
+            <button type="button" (click)="handleRegister()" class="btn btn-primary">Register</button>
+        </div>
+    </div>
+</form>
+<pre>{{userProfile|json}}</pre>

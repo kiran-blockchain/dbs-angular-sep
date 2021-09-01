@@ -6,21 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./navitems.component.css']
 })
 export class NavitemsComponent {
+  
   navitems: Array<any>
+  
   constructor() {
     this.navitems = [{
-      text: "Home",
-      link: "home"
+      text: "Login",
+      link: "login"
     },
     {
-      text: "About us",
-      link: "aboutus"
+      text: "Register",
+      link: "register"
     },
     {
-      text: "Contact us",
-      link: "contactus"
-    }
-    ]
+      text: "Products",
+      link: "products"
+    },
+    {
+      text: "Cart",
+      link: "cart"
+    },
+  ]
   }
 
 
