@@ -26,13 +26,6 @@ export class LoginComponent implements OnInit {
         Validators.maxLength(10),
         Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,10}$/)
       ]),
-      confirmPassword: new FormControl('', [
-  
-        Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(10),
-        Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,10}$/),
-      ]),
       age:new FormControl('',[MinimumAge])
     });
   
