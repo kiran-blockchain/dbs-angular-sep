@@ -8,11 +8,11 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  products:any;
-  total=0;
+  //products:any;
+  //total=0;
   constructor(public dataSvc:DataService) { 
-    this.products = this.dataSvc.getCartItems();
-    this.total = this.dataSvc.getCartTotal();
+    // this.products = this.dataSvc.getCartItems();
+    // this.total = this.dataSvc.getCartTotal();
   }
 
   ngOnInit(): void {
