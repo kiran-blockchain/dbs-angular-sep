@@ -14,10 +14,12 @@ export class NavitemsComponent {
   phone= '1234567890';
   countryList :any;
   country:any;
+  cartTotal:any;
   constructor(private dataService:DataService) {
     this.currentDate= new Date();
     this.countryList = this.dataService.getCountryList();
     this.country='';
+    
     this.navitems = [{
       text: "Login",
       link: "login"

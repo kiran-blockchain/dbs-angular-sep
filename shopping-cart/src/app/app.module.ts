@@ -46,6 +46,9 @@ import { DataService } from './services/data.service';
       path:"register",component:RegisterComponent
     },
     {
+      path:"cart",component:CartComponent
+    },
+    {
       path:"",component:LoginComponent
     }
   

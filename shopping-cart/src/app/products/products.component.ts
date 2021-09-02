@@ -14,5 +14,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  addToCart(item:any){
+    this.dataSvc.addToCart(item)
+  }
+  removeFromCart(item:any){
+    this.dataSvc.removeFromCart(item);
+  }
 }
