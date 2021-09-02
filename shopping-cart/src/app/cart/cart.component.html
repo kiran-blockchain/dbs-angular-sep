@@ -9,13 +9,19 @@
             <th>Total</th>
         </thead>
         <tbody>
-            <tr *ngFor="let p of products;let i=index;">
+            <tr *ngFor="let p of dataSvc.getCartItems();let i=index;">
                 <td>{{i+1}}</td>
                 <td>{{p.name}}</td>
                 <td>{{p.category}}</td>
                 <td>{{p.price}}</td>
                 <td>{{p.quantity}}</td>
-                <td>{{p.price*p.quantity | currency:'INR'}}</td>
+                <!-- <td>{{p.price*p.quantity | currency:'INR'}}</td> -->
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" (click)="removeFromCart(p)">-</button>
+                    <button type="button" class="btn btn-warning" disabled>{{p.quantity}}</button>
+                    <button type="button" class="btn btn-success" (click)="addToCart(p)">+</button>
+                    <button type="button" class="btn btn-secondary" disabled>{{p.quantity*p.price|currency:'INR'}}</button>
+                  </div>
             </tr>
             <tr>
                 <td></td>
@@ -25,7 +31,7 @@
                 <td>
                     <h6>Total</h6>
                 </td>
-                <td>{{total|currency:'INR'}}</td>
+                <td>{{dataSvc.getCartTotal()|currency:'INR'}}</td>
 
             </tr>
         </tbody>
