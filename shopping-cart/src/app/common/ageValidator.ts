@@ -6,6 +6,5 @@ export function MinimumAge(control: AbstractControl): ValidationErrors | null {
     if (isNaN(controlValue) || controlValue < 18) {
         return { 'minage': true, 'requiredValue': 18 };
     }
-
     return null;
 }

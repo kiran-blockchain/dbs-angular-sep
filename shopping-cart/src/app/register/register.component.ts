@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent {
   userProfile: any;
   countryList: Array<any>;
-  constructor() {
+  constructor(private datasvc:DataService) {
 
     this.userProfile = {
       email: 'kiran@gmail.com',
@@ -16,7 +17,7 @@ export class RegisterComponent {
       country: '',
       gender:'M'
     };
-    this.countryList = [{ name: "India", code: "IN" }, { name: 'United States', code: "USA" }];
+    this.countryList = this.datasvc.getCountryList();
   }
 
   handleRegister(){

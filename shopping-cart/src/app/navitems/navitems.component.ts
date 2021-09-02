@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-navitems',
@@ -8,8 +9,15 @@ import { Component } from '@angular/core';
 export class NavitemsComponent {
   
   navitems: Array<any>
-  
-  constructor() {
+  currentDate:any;
+  price='1000';
+  phone= '1234567890';
+  countryList :any;
+  country:any;
+  constructor(private dataService:DataService) {
+    this.currentDate= new Date();
+    this.countryList = this.dataService.getCountryList();
+    this.country='';
     this.navitems = [{
       text: "Login",
       link: "login"
@@ -27,7 +35,8 @@ export class NavitemsComponent {
       link: "cart"
     },
   ]
-  }
+  };
+
 
 
 }

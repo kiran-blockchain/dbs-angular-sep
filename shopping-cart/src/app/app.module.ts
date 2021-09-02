@@ -12,6 +12,9 @@ import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Lowercase2 } from './common/lowercase2.pipe';
+import { PhoneFormatter } from './common/phone.formatter';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    Lowercase2,
+    PhoneFormatter
   
   ],
   imports: [
@@ -46,7 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   
   ])
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

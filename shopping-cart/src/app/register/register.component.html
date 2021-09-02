@@ -29,12 +29,12 @@
         </fieldset>
         <div class="form-group">
             <label for="country" class="form-label mt-4">Country</label>
-            <select id="country" name="country" class="form-select" [(ngModel)]="userProfile.country">
-                <option value="">Select Country</option>
-                <option *ngFor="let c of countryList" [value]="c.code">{{c.name}}
+                <select id="country" name="country" class="form-select" [(ngModel)]="userProfile.country">
+                    <option value="">Select Country</option>
+                    <option *ngFor="let c of countryList" [value]="c.code">{{c.name}}
 
-                </option>
-            </select>
+                    </option>
+                </select>
 
         </div>
         <div class="form-group mt-3">
