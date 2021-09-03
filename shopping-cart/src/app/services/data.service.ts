@@ -47,6 +47,10 @@ export class DataService {
     getProducts() {
         return this.products;
     }
+
+    postApi(url:string,payload:any){
+        return this.http.post(url,payload);
+    }
    
 
 }
