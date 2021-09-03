@@ -1,6 +1,17 @@
-'use strict';
-let updateFunctions = [];
-for (var i = 0; i < 2; i++) {
- updateFunctions.push(function () { return i; });
-}
-console.log(updateFunctions[0]());
+var myFirstDate = new Promise((resolve,reject)=>{
+
+     var basAssManager="kiran";
+     if(basAssManager=='kiran'){
+         reject("you Don't care for me!!!!!!")
+     }
+     else{
+         resolve("Life is important than job")
+     }
+});
+
+myFirstDate.then(result=>{
+    console.log(result)
+}).catch(err=>{
+    console.log(err);
+});
+console.log("How are you");
