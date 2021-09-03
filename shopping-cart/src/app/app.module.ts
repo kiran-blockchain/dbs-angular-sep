@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Lowercase2 } from './common/lowercase2.pipe';
 import { PhoneFormatter } from './common/phone.formatter';
 import { DataService } from './services/data.service';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DataService } from './services/data.service';
     ProductsComponent,
     CartComponent,
     Lowercase2,
-    PhoneFormatter
+    PhoneFormatter,
+    DropdownComponent
   
   ],
   imports: [

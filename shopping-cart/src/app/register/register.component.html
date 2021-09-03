@@ -39,16 +39,8 @@
                 </label>
             </div>
         </fieldset>
-        <div class="form-group">
-            <label for="country" class="form-label mt-4">Country</label>
-                <select id="country" name="country" class="form-select" [(ngModel)]="userProfile.country">
-                    <option value="">Select Country</option>
-                    <option *ngFor="let c of countryList" [value]="c.code">{{c.name}}
-
-                    </option>
-                </select>
-
-        </div>
+        <app-dropdown [schema]="countryDropdownSchema"></app-dropdown>
+        <app-dropdown [schema]="stateSchema"></app-dropdown>
         <div class="form-group mt-3">
             <button type="button" (click)="handleRegister()" class="btn btn-primary">Register</button>
         </div>

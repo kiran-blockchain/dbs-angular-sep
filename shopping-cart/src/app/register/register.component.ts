@@ -9,6 +9,8 @@ import { DataService } from '../services/data.service';
 export class RegisterComponent implements OnInit {
   userProfile: any;
   countryList: Array<any>;
+  countryDropdownSchema :any;
+  stateSchema:any;
   constructor(private datasvc: DataService) {
     this.userProfile = {
       email: 'kiran@gmail.com',
@@ -23,8 +25,23 @@ export class RegisterComponent implements OnInit {
     this.datasvc.getDataFromApi('https://restcountries.eu/rest/v2/all')
       .subscribe((result: any) => {
         this.countryList = result.map((item: any) => {
-          return { name: item.name, code: item.alpha3Code };
-        })
+          return { name: item.name, key: item.alpha2Code };
+        });
+        this.countryDropdownSchema={
+          labelName:"Country",
+          selectedValue:"",
+          controlName:"country",
+          options:this.countryList,
+          defaultLabel:"Select Country"
+        }
+        this.stateSchema={
+          labelName:"State",
+          selectedValue:"",
+          controlName:"state",
+          options:[],
+          defaultLabel:"Select State"
+        }
+        
       }, err => {
         console.log(err);
       })
