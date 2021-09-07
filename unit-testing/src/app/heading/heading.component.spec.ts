@@ -38,6 +38,15 @@ describe('HeadingComponent Class ', () => {
     let getPTag= compiledHtml.querySelector('p').textContent;
     console.log("Component PTag", getPTag);
     expect(getPTag).toBe('Unit Testing');
-  })
+  });
+  it("Handle Click ",()=>{
+    let compiledHtml = fixture.nativeElement;
+    let getButton= compiledHtml.querySelector('button');
+    getButton.click();
+    fixture.detectChanges();
+    let getPTag= compiledHtml.querySelector('p').textContent;
+    expect(getPTag).toBe('I am good');
+    
+  });
 
 })
